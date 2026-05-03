@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cjeq7s5nhc3ov"]
+
+[ext_resource type="Script" uid="uid://bltsesxmlk4u1" path="res://scripts/voltar.gd" id="1_jnpgl"]
+[ext_resource type="Texture2D" uid="uid://cwp3jdtpy8peu" path="res://pixelArt/ceu2.png" id="2_12apv"]
+[ext_resource type="PackedScene" uid="uid://cq3t26jjck4m" path="res://cenas/personagem.tscn" id="3_dgicp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktflw"]
+size = Vector2(1193, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12apv"]
+size = Vector2(41, 652.5)
+
+[node name="Control" type="Control" unique_id=1254163639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnpgl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1249477539]
+z_index = -2
+layout_mode = 0
+offset_right = 1176.0
+offset_bottom = 668.0
+color = Color(0.46251786, 0.62397534, 0.74271405, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=368200964]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 39.0
+offset_right = 765.0
+offset_bottom = 329.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=998189957]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "             Controles:
+D  -                       Direita
+A  -                       Esquerda
+Espaço/W  -         Pulo
+J -                          Ataque
+"
+
+[node name="voltar_btn" type="Button" parent="VBoxContainer" unique_id=1939586513]
+layout_mode = 2
+text = "Voltar"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=701348231]
+z_index = -2
+position = Vector2(589.00006, 307)
+scale = Vector2(1.0745455, 1.04)
+texture = ExtResource("2_12apv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2128020258]
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D" unique_id=692164905]
+position = Vector2(590, 647)
+shape = SubResource("RectangleShape2D_ktflw")
+
+[node name="Collisionparede" type="CollisionShape2D" parent="StaticBody2D" unique_id=254855352]
+position = Vector2(-23, 318.25)
+shape = SubResource("RectangleShape2D_12apv")
+
+[node name="Collisionparede2" type="CollisionShape2D" parent="StaticBody2D" unique_id=299865490]
+position = Vector2(1174, 321)
+shape = SubResource("RectangleShape2D_12apv")
+
+[node name="jogador" parent="." unique_id=494420206 instance=ExtResource("3_dgicp")]
+position = Vector2(150, 537)
+
+[connection signal="button_down" from="VBoxContainer/voltar_btn" to="." method="_on_voltar_btn_button_down"]

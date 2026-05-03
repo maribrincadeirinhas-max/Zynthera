@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://clq0wlxuihvij"]
+
+[ext_resource type="Script" uid="uid://dtphlkek2pgqp" path="res://scripts/tela_derrota.gd" id="1_iikij"]
+
+[node name="Control" type="Control" unique_id=715167197]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iikij")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1749284694]
+layout_mode = 0
+offset_right = 1168.0
+offset_bottom = 669.0
+color = Color(0.6948197, 0.50566953, 0.38793734, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=236527672]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 265.0
+offset_right = 821.0
+offset_bottom = 436.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1459936865]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Você se sairá melhor da próxima vez!"
+
+[node name="menu_btn" type="Button" parent="VBoxContainer" unique_id=1654767410]
+layout_mode = 2
+text = "Voltar ao menu principal"
+
+[connection signal="button_down" from="VBoxContainer/menu_btn" to="." method="_on_menu_btn_button_down"]

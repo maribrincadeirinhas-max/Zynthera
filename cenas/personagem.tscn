@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cq3t26jjck4m"]
+
+[ext_resource type="Script" uid="uid://dp5jxm45isvjy" path="res://scripts/personagem.gd" id="1_c6r7t"]
+[ext_resource type="Texture2D" uid="uid://c77sf8m23odr7" path="res://pixelArt/jogador/personagemP1.png" id="1_tyg5f"]
+[ext_resource type="Texture2D" uid="uid://bfx8e04c2itlw" path="res://pixelArt/jogador/personagemP2.png" id="2_c6r7t"]
+[ext_resource type="Texture2D" uid="uid://des4wgmaml30v" path="res://pixelArt/jogador/personagem_ataqueP6.png" id="2_rbten"]
+[ext_resource type="Texture2D" uid="uid://bxecot70svl22" path="res://pixelArt/jogador/personagemP3.png" id="3_d05dr"]
+[ext_resource type="Texture2D" uid="uid://d2rvy6bpbe06p" path="res://pixelArt/jogador/personagem_ataqueP7.png" id="3_p2ucq"]
+[ext_resource type="Texture2D" uid="uid://bej117r11k7k6" path="res://pixelArt/jogador/personagemP5.png" id="4_foddy"]
+[ext_resource type="Texture2D" uid="uid://cu0dvbo2808ya" path="res://pixelArt/jogador/personagem_ataqueP8.png" id="4_g4ww8"]
+[ext_resource type="Texture2D" uid="uid://d0s78wp5pwm7r" path="res://pixelArt/jogador/personagem_ataqueP9.png" id="5_tyx55"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o8vf"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_rbten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p2ucq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g4ww8")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_tyx55")
+}],
+"loop": false,
+"name": &"ataque",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c6r7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tyg5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d05dr")
+}],
+"loop": true,
+"name": &"caminhando",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tyg5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_foddy")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyg5f"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6r7t"]
+radius = 8.666668
+height = 47.333332
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ww8"]
+radius = 18.907883
+height = 52.04888
+
+[node name="jogador" type="CharacterBody2D" unique_id=494420206]
+position = Vector2(81, 88)
+scale = Vector2(3, 3)
+collision_mask = 3
+script = ExtResource("1_c6r7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=504449200]
+texture_filter = 3
+position = Vector2(-9.333333, 0)
+sprite_frames = SubResource("SpriteFrames_3o8vf")
+animation = &"ataque"
+autoplay = "parado"
+frame = 2
+frame_progress = 0.7559894
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=966670895]
+shape = SubResource("CapsuleShape2D_tyg5f")
+
+[node name="corpo" type="Area2D" parent="." unique_id=27700695]
+
+[node name="Collision" type="CollisionShape2D" parent="corpo" unique_id=595239400]
+position = Vector2(-1, 0.66666687)
+shape = SubResource("CapsuleShape2D_c6r7t")
+
+[node name="rebater" type="Area2D" parent="." unique_id=1740296873]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="rebater" unique_id=53597110]
+position = Vector2(1.6666665, 1.333334)
+rotation = 0.8487239
+shape = SubResource("CapsuleShape2D_g4ww8")
+
+[connection signal="area_entered" from="corpo" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="rebater" to="." method="_on_rebater_area_entered"]

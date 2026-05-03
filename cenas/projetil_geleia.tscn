@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dgxdwdai4gwca"]
+
+[ext_resource type="Script" uid="uid://b0qtv7jm76m7l" path="res://scripts/projetil_geleia.gd" id="1_5iok3"]
+[ext_resource type="Texture2D" uid="uid://b261jvff3m02c" path="res://pixelArt/inimigos/projetilGeleiaP1.png" id="2_m1717"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q32o"]
+atlas = ExtResource("2_m1717")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa5p0"]
+atlas = ExtResource("2_m1717")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpteh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q32o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa5p0")
+}],
+"loop": true,
+"name": &"projetil",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w205"]
+radius = 20.011328
+height = 59.968864
+
+[node name="Area2D" type="Area2D" unique_id=1486478542]
+collision_layer = 3
+script = ExtResource("1_5iok3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917752215]
+texture_filter = 3
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hpteh")
+animation = &"projetil"
+autoplay = "projetil"
+frame = 1
+frame_progress = 0.5273639
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185299435]
+position = Vector2(-2, 0)
+rotation = 1.5838206
+shape = SubResource("CapsuleShape2D_3w205")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=331406764]
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

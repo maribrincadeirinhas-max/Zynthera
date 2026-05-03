@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bekx1352nrhr6"]
+
+[ext_resource type="Texture2D" uid="uid://jnwq7btmrt0v" path="res://pixelArt/interface/coracoesP5.png" id="1_0paj4"]
+[ext_resource type="Texture2D" uid="uid://c36c8qhofp7ay" path="res://pixelArt/interface/coracoesP4.png" id="2_kuuuw"]
+[ext_resource type="Texture2D" uid="uid://epx64pdxy0kg" path="res://pixelArt/interface/coracoesP3.png" id="3_dqroy"]
+[ext_resource type="Texture2D" uid="uid://drgnofo5f55td" path="res://pixelArt/interface/coracoesP2.png" id="4_wca4d"]
+[ext_resource type="Texture2D" uid="uid://b72ofcw8yx3o5" path="res://pixelArt/interface/coracoesP1.png" id="5_ojddb"]
+[ext_resource type="Script" uid="uid://lr0hp8frkbhh" path="res://scripts/coracoes.gd" id="6_kuuuw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhkmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ojddb")
+}],
+"loop": true,
+"name": &"cinco",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kuuuw")
+}],
+"loop": true,
+"name": &"dois",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wca4d")
+}],
+"loop": true,
+"name": &"quatro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dqroy")
+}],
+"loop": true,
+"name": &"tres",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0paj4")
+}],
+"loop": true,
+"name": &"um",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1166553956]
+texture_filter = 3
+position = Vector2(80, 16)
+sprite_frames = SubResource("SpriteFrames_lhkmy")
+animation = &"um"
+script = ExtResource("6_kuuuw")

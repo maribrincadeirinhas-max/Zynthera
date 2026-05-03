@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dxlq7gi5ohoth"]
+
+[ext_resource type="Script" uid="uid://cngqlga858x8i" path="res://scripts/tela_vitoria.gd" id="1_hrlbq"]
+
+[node name="Control" type="Control" unique_id=1915974471]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrlbq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664687546]
+layout_mode = 0
+offset_right = 1170.0
+offset_bottom = 665.0
+color = Color(0.30672157, 0.63337094, 0.3436527, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=377211036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 466.0
+offset_top = 251.0
+offset_right = -467.0
+offset_bottom = -221.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=238324686]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Parabéns, você venceu!"
+horizontal_alignment = 1
+
+[node name="prox_fase_btn" type="Button" parent="VBoxContainer" unique_id=614869339]
+layout_mode = 2
+text = "Ir para a próxima fase"
+
+[node name="menu_btn" type="Button" parent="VBoxContainer" unique_id=2106600248]
+layout_mode = 2
+text = "Voltar ao menu principal"
+
+[connection signal="button_down" from="VBoxContainer/menu_btn" to="." method="_on_menu_btn_button_down"]

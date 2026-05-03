@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bbdt4r8n408o4"]
+
+[ext_resource type="Script" uid="uid://c4nvaew6vv82a" path="res://scripts/inimigo_geleia.gd" id="1_a4r7o"]
+[ext_resource type="Texture2D" uid="uid://b5p0d3g1wo83e" path="res://pixelArt/inimigos/GeleiaP1.png" id="1_lmvyi"]
+[ext_resource type="Texture2D" uid="uid://bfl53wjrav1qm" path="res://pixelArt/inimigos/GeleiaP2.png" id="2_a4r7o"]
+[ext_resource type="Texture2D" uid="uid://bj3dxy1unyn7m" path="res://pixelArt/inimigos/GeleiaP3.png" id="3_uhj7j"]
+[ext_resource type="Texture2D" uid="uid://bmb0vrj2real8" path="res://pixelArt/inimigos/GeleiaP4.png" id="4_qiral"]
+[ext_resource type="Texture2D" uid="uid://dgnkamxk4w4yv" path="res://pixelArt/inimigos/GeleiaP5.png" id="5_0kwal"]
+[ext_resource type="Texture2D" uid="uid://b481ya004sfc" path="res://pixelArt/inimigos/GeleiaP6.png" id="6_h0825"]
+[ext_resource type="Texture2D" uid="uid://clti0djs7w41h" path="res://pixelArt/inimigos/GeleiaP7.png" id="7_0jre6"]
+[ext_resource type="Texture2D" uid="uid://cahxeorwv5sih" path="res://pixelArt/inimigos/GeleiaP8.png" id="8_8gptk"]
+[ext_resource type="Texture2D" uid="uid://gqrdhlxu3n48" path="res://pixelArt/inimigos/GeleiaP9.png" id="9_3sgkg"]
+[ext_resource type="Texture2D" uid="uid://bvajcielhqbt0" path="res://pixelArt/inimigos/GeleiaP10.png" id="10_0qd48"]
+[ext_resource type="Texture2D" uid="uid://bsxokiffbrn0n" path="res://pixelArt/inimigos/GeleiaP11.png" id="11_xi6d0"]
+[ext_resource type="Texture2D" uid="uid://bf3pbbjt32xim" path="res://pixelArt/inimigos/GeleiaP12.png" id="12_ngr2w"]
+[ext_resource type="Texture2D" uid="uid://68k60aiux63a" path="res://pixelArt/inimigos/GeleiaP13.png" id="13_gxjed"]
+[ext_resource type="Texture2D" uid="uid://rhlwoxy7qo0v" path="res://pixelArt/inimigos/GeleiaP14.png" id="14_f3kgn"]
+[ext_resource type="Texture2D" uid="uid://dt7u55to6rbkh" path="res://pixelArt/inimigos/GeleiaP15.png" id="15_4udjv"]
+[ext_resource type="Texture2D" uid="uid://bns1ktb5bjr8s" path="res://pixelArt/inimigos/GeleiaP16.png" id="16_xnfi2"]
+[ext_resource type="Texture2D" uid="uid://d10ly12ct1gc8" path="res://pixelArt/inimigos/GeleiaP17.png" id="17_b0a20"]
+[ext_resource type="Texture2D" uid="uid://pbbni03ljrtj" path="res://pixelArt/inimigos/GeleiaP18.png" id="18_w7gbx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buya1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lmvyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a4r7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uhj7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qiral")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0kwal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h0825")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0jre6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8gptk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3sgkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0qd48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xi6d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ngr2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gxjed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f3kgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4udjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xnfi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b0a20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_w7gbx")
+}],
+"loop": true,
+"name": &"geleia",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4r7o"]
+size = Vector2(67.42856, 185.42856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eep0o"]
+size = Vector2(94, 202)
+
+[node name="geleia" type="CharacterBody2D" unique_id=432016705]
+position = Vector2(625.00006, 320)
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_a4r7o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1722278443]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_buya1")
+animation = &"geleia"
+autoplay = "geleia"
+frame = 6
+frame_progress = 0.060079157
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544331117]
+position = Vector2(141.42847, 1.0000076)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_a4r7o")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=402028535]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1385028272]
+position = Vector2(128.99997, 0)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_eep0o")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=757275594]
+position = Vector2(109.99998, -12.571432)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=378530894]
+position = Vector2(108.5714, -62.571426)
+
+[node name="Marker2D3" type="Marker2D" parent="." unique_id=1882272294]
+position = Vector2(107.99997, 42.857143)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dcqy05vt1roxf"]
+
+[ext_resource type="Script" uid="uid://ddcgggiy6incc" path="res://scripts/menu.gd" id="1_64url"]
+
+[sub_resource type="FontVariation" id="FontVariation_nbnbt"]
+
+[node name="Control" type="Control" unique_id=1454208023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_64url")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1927761318]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -8.0
+offset_right = 1188.0
+offset_bottom = 670.0
+color = Color(0.14359406, 0.48686433, 0.74749637, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1116182834]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 469.0
+offset_top = 127.0
+offset_right = -462.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=660584611]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_nbnbt")
+theme_override_font_sizes/font_size = 45
+text = "Zynthera"
+horizontal_alignment = 1
+
+[node name="play_btn" type="Button" parent="VBoxContainer" unique_id=77879737]
+layout_mode = 2
+text = "Jogar"
+icon_alignment = 1
+
+[node name="controles_btn" type="Button" parent="VBoxContainer" unique_id=1026025673]
+layout_mode = 2
+text = "Controles"
+
+[node name="exit_btn" type="Button" parent="VBoxContainer" unique_id=462998819]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="button_down" from="VBoxContainer/play_btn" to="." method="_on_play_btn_button_down"]
+[connection signal="button_down" from="VBoxContainer/controles_btn" to="." method="_on_controles_btn_button_down"]
+[connection signal="button_down" from="VBoxContainer/exit_btn" to="." method="_on_exit_btn_button_down"]
