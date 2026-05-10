@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwp3jdtpy8peu" path="res://pixelArt/ceu2.png" id="3_l5qqy"]
 [ext_resource type="PackedScene" uid="uid://bbdt4r8n408o4" path="res://cenas/inimigo_geleia.tscn" id="5_32upe"]
 [ext_resource type="PackedScene" uid="uid://bekx1352nrhr6" path="res://cenas/coracoes.tscn" id="6_l5qqy"]
+[ext_resource type="PackedScene" uid="uid://byls64b738bu5" path="res://cenas/boss_life_interface.tscn" id="7_x0mfe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5qqy"]
 texture = ExtResource("1_lwcig")
@@ -58,10 +59,14 @@ shape = SubResource("RectangleShape2D_32upe")
 [node name="geleia" parent="." unique_id=432016705 instance=ExtResource("5_32upe")]
 position = Vector2(707.00006, 322)
 
-[node name="AnimatedSprite2D" parent="." unique_id=1166553956 instance=ExtResource("6_l5qqy")]
+[node name="vida_player" parent="." unique_id=1166553956 instance=ExtResource("6_l5qqy")]
 position = Vector2(126, 608)
 scale = Vector2(1.5, 1.5)
 
 [node name="jogador" parent="." unique_id=494420206 instance=ExtResource("2_sydfx")]
+
+[node name="life_boss" parent="." unique_id=1819759494 instance=ExtResource("7_x0mfe")]
+position = Vector2(585, 28.000002)
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Area2Dzona" to="jogador" method="_on_area_2_dzona_body_entered"]

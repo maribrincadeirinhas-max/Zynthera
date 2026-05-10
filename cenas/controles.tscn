@@ -67,6 +67,10 @@ shape = SubResource("RectangleShape2D_12apv")
 position = Vector2(1174, 321)
 shape = SubResource("RectangleShape2D_12apv")
 
+[node name="Collision2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1128681821]
+position = Vector2(572, -46)
+shape = SubResource("RectangleShape2D_ktflw")
+
 [node name="jogador" parent="." unique_id=494420206 instance=ExtResource("3_dgicp")]
 position = Vector2(150, 537)
 
