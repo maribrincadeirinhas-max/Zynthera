@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byls64b738bu5"]
 
 [ext_resource type="Texture2D" uid="uid://2goynd5f7i0u" path="res://pixelArt/interface/barraDeVidaBossSheets.png" id="1_6s7ki"]
-[ext_resource type="Script" uid="uid://brdkggmvdgpmj" path="res://boss_life.gd" id="2_w4wd5"]
+[ext_resource type="Script" uid="uid://brdkggmvdgpmj" path="res://scripts/boss_life.gd" id="2_w4wd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d508p"]
 atlas = ExtResource("1_6s7ki")
