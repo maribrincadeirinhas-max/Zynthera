@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -620.0
 @onready var zona_morte = $"../Area2D"
 @onready var fase1 = $".."
 var atacando = false
+@onready var somRebater : AudioStreamPlayer2D = $Sons/rebate
+@onready var somDoTaco : AudioStreamPlayer2D = $Sons/somDoTaco
 
 func _physics_process(delta: float) -> void:
 
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("ataque_jogador"):
 		ataque()
+		som_Do_Taco()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		rebater_projeteis()
 		
@@ -49,6 +52,7 @@ func rebater_projeteis():
 
 	for area in areas:
 		if area.has_method("rebater"):
+			som_de_rebater()
 			area.rebater(Vector2.RIGHT)
 
 func _on_area_2_dzona_body_entered(body: Node2D) -> void:
@@ -59,3 +63,9 @@ func _on_area_2_dzona_body_entered(body: Node2D) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.name.begins_with("inimigo_projetil")):
 			Sistemajogo.receber_dano(1)
+
+func som_de_rebater():
+	somRebater.play()
+	
+func som_Do_Taco():
+	somDoTaco.play()

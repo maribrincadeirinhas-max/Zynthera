@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2rvy6bpbe06p"
-path="res://.godot/imported/personagem_ataqueP7.png-cb043856a984fa388545c120991f95bd.ctex"
+uid="uid://mmbyoasx4c6r"
+path="res://.godot/imported/personagemP9.png-89f0f207195a54646b2583bbf0c88831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixelArt/jogador/personagem_ataqueP7.png"
-dest_files=["res://.godot/imported/personagem_ataqueP7.png-cb043856a984fa388545c120991f95bd.ctex"]
+source_file="res://pixelArt/jogador/personagemP9.png"
+dest_files=["res://.godot/imported/personagemP9.png-89f0f207195a54646b2583bbf0c88831.ctex"]
 
 [params]
 

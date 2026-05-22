@@ -3,7 +3,6 @@ extends Area2D
 var velocidade = 300
 var direction = Vector2.LEFT
 
-
 func _process(delta: float) -> void:
 	position += direction * velocidade * delta
 

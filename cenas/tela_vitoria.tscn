@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxlq7gi5ohoth"]
 
 [ext_resource type="Script" uid="uid://cngqlga858x8i" path="res://scripts/tela_vitoria.gd" id="1_hrlbq"]
+[ext_resource type="AudioStream" uid="uid://durmw3h4p42yk" path="res://sons/click_de_botao.mp3" id="2_hft8k"]
 
 [node name="Control" type="Control" unique_id=1915974471]
 layout_mode = 3
@@ -43,4 +44,9 @@ text = "Ir para a próxima fase"
 layout_mode = 2
 text = "Voltar ao menu principal"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=699075930]
+stream = ExtResource("2_hft8k")
+
+[connection signal="mouse_entered" from="VBoxContainer/prox_fase_btn" to="." method="_on_prox_fase_btn_mouse_entered"]
 [connection signal="button_down" from="VBoxContainer/menu_btn" to="." method="_on_menu_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/menu_btn" to="." method="_on_menu_btn_mouse_entered"]

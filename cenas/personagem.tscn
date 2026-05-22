@@ -3,27 +3,29 @@
 [ext_resource type="Script" uid="uid://dp5jxm45isvjy" path="res://scripts/personagem.gd" id="1_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://c77sf8m23odr7" path="res://pixelArt/jogador/personagemP1.png" id="1_tyg5f"]
 [ext_resource type="Texture2D" uid="uid://bfx8e04c2itlw" path="res://pixelArt/jogador/personagemP2.png" id="2_c6r7t"]
-[ext_resource type="Texture2D" uid="uid://des4wgmaml30v" path="res://pixelArt/jogador/personagem_ataqueP6.png" id="2_rbten"]
+[ext_resource type="Texture2D" uid="uid://bpxdy5chxrgit" path="res://pixelArt/jogador/personagemP6.png" id="2_g4ww8"]
 [ext_resource type="Texture2D" uid="uid://bxecot70svl22" path="res://pixelArt/jogador/personagemP3.png" id="3_d05dr"]
-[ext_resource type="Texture2D" uid="uid://d2rvy6bpbe06p" path="res://pixelArt/jogador/personagem_ataqueP7.png" id="3_p2ucq"]
+[ext_resource type="Texture2D" uid="uid://bobx16aclj4se" path="res://pixelArt/jogador/personagemP7.png" id="3_tyx55"]
 [ext_resource type="Texture2D" uid="uid://bej117r11k7k6" path="res://pixelArt/jogador/personagemP5.png" id="4_foddy"]
-[ext_resource type="Texture2D" uid="uid://cu0dvbo2808ya" path="res://pixelArt/jogador/personagem_ataqueP8.png" id="4_g4ww8"]
-[ext_resource type="Texture2D" uid="uid://d0s78wp5pwm7r" path="res://pixelArt/jogador/personagem_ataqueP9.png" id="5_tyx55"]
+[ext_resource type="Texture2D" uid="uid://0wh5vqeghnkt" path="res://pixelArt/jogador/personagemP8.png" id="4_n4dvy"]
+[ext_resource type="Texture2D" uid="uid://mmbyoasx4c6r" path="res://pixelArt/jogador/personagemP9.png" id="5_souwo"]
+[ext_resource type="AudioStream" uid="uid://1wy7s47gqvod" path="res://sons/sfx_sounds_falling1.wav" id="10_p2ucq"]
+[ext_resource type="AudioStream" uid="uid://diq7pegf8mkp" path="res://sons/videoplayback.mp3" id="11_g4ww8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3o8vf"]
 animations = [{
 "frames": [{
 "duration": 0.5,
-"texture": ExtResource("2_rbten")
+"texture": ExtResource("2_g4ww8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_p2ucq")
+"texture": ExtResource("3_tyx55")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_g4ww8")
+"texture": ExtResource("4_n4dvy")
 }, {
 "duration": 3.0,
-"texture": ExtResource("5_tyx55")
+"texture": ExtResource("5_souwo")
 }],
 "loop": false,
 "name": &"ataque",
@@ -64,8 +66,8 @@ radius = 8.666668
 height = 47.333332
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ww8"]
-radius = 18.907883
-height = 52.04888
+radius = 17.216522
+height = 47.284622
 
 [node name="jogador" type="CharacterBody2D" unique_id=494420206]
 position = Vector2(81, 88)
@@ -94,9 +96,19 @@ shape = SubResource("CapsuleShape2D_c6r7t")
 [node name="rebater" type="Area2D" parent="." unique_id=1740296873]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="rebater" unique_id=53597110]
-position = Vector2(1.6666665, 1.333334)
+position = Vector2(0.99999976, 0.33333397)
 rotation = 0.8487239
 shape = SubResource("CapsuleShape2D_g4ww8")
+
+[node name="Sons" type="Node" parent="." unique_id=2083271710]
+
+[node name="rebate" type="AudioStreamPlayer2D" parent="Sons" unique_id=1874708174]
+position = Vector2(81, 88)
+scale = Vector2(3, 3)
+stream = ExtResource("10_p2ucq")
+
+[node name="somDoTaco" type="AudioStreamPlayer2D" parent="Sons" unique_id=147720356]
+stream = ExtResource("11_g4ww8")
 
 [connection signal="area_entered" from="corpo" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="rebater" to="." method="_on_rebater_area_entered"]

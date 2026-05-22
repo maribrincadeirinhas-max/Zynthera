@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bltsesxmlk4u1" path="res://scripts/voltar.gd" id="1_jnpgl"]
 [ext_resource type="Texture2D" uid="uid://cwp3jdtpy8peu" path="res://pixelArt/ceu2.png" id="2_12apv"]
 [ext_resource type="PackedScene" uid="uid://cq3t26jjck4m" path="res://cenas/personagem.tscn" id="3_dgicp"]
+[ext_resource type="AudioStream" uid="uid://durmw3h4p42yk" path="res://sons/click_de_botao.mp3" id="4_dgicp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktflw"]
 size = Vector2(1193, 60)
@@ -56,7 +57,7 @@ texture = ExtResource("2_12apv")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2128020258]
 
 [node name="Collision" type="CollisionShape2D" parent="StaticBody2D" unique_id=692164905]
-position = Vector2(590, 647)
+position = Vector2(592, 650)
 shape = SubResource("RectangleShape2D_ktflw")
 
 [node name="Collisionparede" type="CollisionShape2D" parent="StaticBody2D" unique_id=254855352]
@@ -72,6 +73,10 @@ position = Vector2(572, -46)
 shape = SubResource("RectangleShape2D_ktflw")
 
 [node name="jogador" parent="." unique_id=494420206 instance=ExtResource("3_dgicp")]
-position = Vector2(150, 537)
+position = Vector2(158, 405)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1387965650]
+stream = ExtResource("4_dgicp")
 
 [connection signal="button_down" from="VBoxContainer/voltar_btn" to="." method="_on_voltar_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/voltar_btn" to="." method="_on_voltar_btn_mouse_entered"]

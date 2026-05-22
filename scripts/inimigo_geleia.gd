@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-
 @export var tempo_entre_tiros := 1.5
-
 var projetil_geleia = preload("res://cenas/projetil_geleia.tscn")
 @onready var spawn_point = $Marker2D
 @onready var spawn_point2 = $Marker2D2
@@ -27,8 +25,6 @@ func atirar(ponto: Marker2D):
 	projetil.name = "inimigo_projetil"
 	projetil.initialize(ponto.global_position, Vector2.LEFT)
 	
-
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.name.begins_with("projetil_rebatido")):
 		Sistemajogo.recDano_boss_fase1(1)
