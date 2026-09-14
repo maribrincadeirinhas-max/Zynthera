@@ -33,7 +33,7 @@ Para rodar ou editar o projeto, você precisará da **Godot Engine** instalada:
 
 ## Controles
 
-| Comando | Teclado / Mouse |
+| Comando | Teclado |
 | :--- | :--- |
 | **Movimentação** | `A` `D` |
 | **Pular** | `W` |
