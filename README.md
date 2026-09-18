@@ -23,7 +23,7 @@ Para rodar ou editar o projeto, você precisará da **Godot Engine** instalada:
 ### Executando o Jogo (Desenvolvimento)
 1. Baixe ou clone este repositório:
    ```bash
-   git clone https://github.com](https://github.com/maribrincadeirinhas-max/Zynthera.git
+   git clone https://github.com/maribrincadeirinhas-max/Zynthera.git
    ```
 2. Abra a Godot Engine.
 3. Clique em **Importar** (Import) e selecione o arquivo `project.godot` na pasta do projeto.
