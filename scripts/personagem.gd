@@ -1,23 +1,25 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -620.0
+const JUMP_VELOCITY = -920.0
 @onready var anim = $AnimatedSprite2D
 @onready var zona_morte = $"../Area2D"
 @onready var fase1 = $".."
 var atacando = false
 @onready var somRebater : AudioStreamPlayer2D = $Sons/rebate
 @onready var somDoTaco : AudioStreamPlayer2D = $Sons/somDoTaco
+var pulando : bool = false
 
 func _physics_process(delta: float) -> void:
 
 	if not atacando:
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * delta * 2.0
+		else:
+			pulando = false
 
 		if Input.is_action_just_pressed("pulo") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			pulando = true
 			velocity.y = JUMP_VELOCITY
 	
 		var direction := Input.get_axis("esquerda", "direita")
@@ -33,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			anim.play("parado")
 		
-	if Input.is_action_just_pressed("ataque_jogador"):
+	if Input.is_action_just_pressed("ataque_jogador") and not pulando:
 		ataque()
 		som_Do_Taco()
 		velocity.x = move_toward(velocity.x, 0, SPEED)

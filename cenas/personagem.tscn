@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cq3t26jjck4m"]
+[gd_scene load_steps=16 format=3 uid="uid://cq3t26jjck4m"]
 
 [ext_resource type="Script" uid="uid://dp5jxm45isvjy" path="res://scripts/personagem.gd" id="1_c6r7t"]
 [ext_resource type="Texture2D" uid="uid://c77sf8m23odr7" path="res://pixelArt/jogador/personagemP1.png" id="1_tyg5f"]
@@ -69,45 +69,43 @@ height = 47.333332
 radius = 17.216522
 height = 47.284622
 
-[node name="jogador" type="CharacterBody2D" unique_id=494420206]
+[node name="jogador" type="CharacterBody2D"]
 position = Vector2(81, 88)
 scale = Vector2(3, 3)
 collision_mask = 3
 script = ExtResource("1_c6r7t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=504449200]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 position = Vector2(-9.333333, 0)
 sprite_frames = SubResource("SpriteFrames_3o8vf")
 animation = &"ataque"
 autoplay = "parado"
-frame = 2
-frame_progress = 0.7559894
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=966670895]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tyg5f")
 
-[node name="corpo" type="Area2D" parent="." unique_id=27700695]
+[node name="corpo" type="Area2D" parent="."]
 
-[node name="Collision" type="CollisionShape2D" parent="corpo" unique_id=595239400]
+[node name="Collision" type="CollisionShape2D" parent="corpo"]
 position = Vector2(-1, 0.66666687)
 shape = SubResource("CapsuleShape2D_c6r7t")
 
-[node name="rebater" type="Area2D" parent="." unique_id=1740296873]
+[node name="rebater" type="Area2D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape2D" parent="rebater" unique_id=53597110]
+[node name="CollisionShape" type="CollisionShape2D" parent="rebater"]
 position = Vector2(0.99999976, 0.33333397)
 rotation = 0.8487239
 shape = SubResource("CapsuleShape2D_g4ww8")
 
-[node name="Sons" type="Node" parent="." unique_id=2083271710]
+[node name="Sons" type="Node" parent="."]
 
-[node name="rebate" type="AudioStreamPlayer2D" parent="Sons" unique_id=1874708174]
+[node name="rebate" type="AudioStreamPlayer2D" parent="Sons"]
 position = Vector2(81, 88)
 scale = Vector2(3, 3)
 stream = ExtResource("10_p2ucq")
 
-[node name="somDoTaco" type="AudioStreamPlayer2D" parent="Sons" unique_id=147720356]
+[node name="somDoTaco" type="AudioStreamPlayer2D" parent="Sons"]
 stream = ExtResource("11_g4ww8")
 
 [connection signal="area_entered" from="corpo" to="." method="_on_area_2d_area_entered"]

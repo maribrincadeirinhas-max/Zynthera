@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bekx1352nrhr6"]
+[gd_scene load_steps=8 format=3 uid="uid://bekx1352nrhr6"]
 
 [ext_resource type="Texture2D" uid="uid://jnwq7btmrt0v" path="res://pixelArt/interface/coracoesP5.png" id="1_0paj4"]
 [ext_resource type="Texture2D" uid="uid://c36c8qhofp7ay" path="res://pixelArt/interface/coracoesP4.png" id="2_kuuuw"]
@@ -50,7 +50,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1166553956]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 texture_filter = 3
 position = Vector2(80, 16)
 sprite_frames = SubResource("SpriteFrames_lhkmy")
