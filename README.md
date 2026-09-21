@@ -45,3 +45,9 @@ Para rodar ou editar o projeto, você precisará da **Godot Engine** instalada:
 
 * **Engine:** Godot Engine (GDScript)
 * **Arte:** Aseprite
+
+---
+
+## Gameplay
+
+![Gameplay Zynthera](pixelArt/cenas do jogo/imagem1.png)
