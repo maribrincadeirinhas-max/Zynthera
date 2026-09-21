@@ -50,4 +50,5 @@ Para rodar ou editar o projeto, você precisará da **Godot Engine** instalada:
 
 ## Gameplay
 
-![Gameplay Zynthera](pixelArt/cenas%20do%20jogo/imagem1.png)(pixelArt/cenas%20do%20jogo/imagem2.png)
+![Gameplay Zynthera](pixelArt/cenas%20do%20jogo/imagem1.png)
+![Gameplay Zynthera](pixelArt/cenas%20do%20jogo/imagem2.png)
